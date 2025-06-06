@@ -1,6 +1,6 @@
 # Vending Machine Frontend
 
-A modern, responsive frontend application for a digital vending machine system built with Next.js and TypeScript. This application provides an intuitive user interface that simulates the experience of using a real vending machine.
+A modern, responsive frontend application for a vending machine system built with Next.js and TypeScript. This application provides an intuitive user interface that simulates the experience of using a real vending machine.
 
 ## Overview
 
@@ -9,7 +9,7 @@ This frontend application serves as the user interface for a vending machine sys
 - Browse and select products from an interactive product grid
 - View real-time balance and transaction information
 - Complete purchases and receive digital receipts
-- Cancel transactions and receive refunds
+- Cancel transactions and receive back your money
 
 ## Features
 
