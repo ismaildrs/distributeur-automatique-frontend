@@ -22,16 +22,11 @@ This frontend application serves as the user interface for a vending machine sys
 
 ### User Experience
 - **Realistic Design**: Authentic vending machine appearance with professional styling
-- **Responsive Layout**: Optimized for various screen sizes and devices
-- **Real-time Updates**: Live synchronization with backend for accurate state management
-- **Error Handling**: Comprehensive error messages and user guidance
-- **Accessibility**: Clear visual feedback and intuitive navigation
 
 ### Technical Features
 - **Backend Integration**: RESTful API communication for all operations
 - **State Management**: Robust state handling for complex transaction flows
 - **Type Safety**: Full TypeScript implementation for enhanced reliability
-- **Performance**: Optimized rendering and efficient data fetching
 
 ## Technology Stack
 

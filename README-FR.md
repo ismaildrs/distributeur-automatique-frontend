@@ -25,17 +25,12 @@ Cette application frontend sert d’interface utilisateur pour un système de ma
 ### Expérience Utilisateur
 
 * **Design réaliste** : Apparence authentique de machine distributrice avec un style professionnel
-* **Mise en page responsive** : Optimisée pour tous types d’écrans et d’appareils
-* **Mises à jour en temps réel** : Synchronisation avec le backend pour une gestion précise de l’état
-* **Gestion des erreurs** : Messages d’erreur complets et indications pour les utilisateurs
-* **Accessibilité** : Rétroaction visuelle claire et navigation intuitive
 
 ### Aspects Techniques
 
 * **Intégration Backend** : Communication via API REST pour toutes les opérations
 * **Gestion d’état** : Gestion robuste des états pour des flux de transaction complexes
 * **Sécurité typée** : Implémentation complète en TypeScript pour plus de fiabilité
-* **Performance** : Rendu optimisé et récupération efficace des données
 
 ## Pile Technologique
 
