@@ -1,166 +1,132 @@
 # Vending Machine Frontend
 
-An authentic vending machine frontend built with Next.js 15, React 19, TypeScript, and Tailwind CSS. Designed to look and feel like a real vending machine with proper transaction workflow.
+A modern, responsive frontend application for a digital vending machine system built with Next.js and TypeScript. This application provides an intuitive user interface that simulates the experience of using a real vending machine.
+
+## Overview
+
+This frontend application serves as the user interface for a vending machine system, allowing customers to:
+- Insert money using various Moroccan Dirham denominations
+- Browse and select products from an interactive product grid
+- View real-time balance and transaction information
+- Complete purchases and receive digital receipts
+- Cancel transactions and receive refunds
 
 ## Features
 
-- 🎰 **Authentic Vending Machine UI**: Realistic design with retro styling and digital displays
-- 💰 **Moroccan Dirham Support**: Accepts 0.5, 1, 2, 5, and 10 MAD denominations
-- 🔄 **Proper Transaction Flow**: Insert money first, then select products
-- 🥤 **Product Display**: Grid layout with slot labels (A1, A2, etc.) like real machines
-- 🛒 **Multi-Product Selection**: Buy multiple items in one transaction
-- 🧾 **Digital Receipt**: Complete transaction summary with change calculation
-- 📱 **Responsive Design**: Works on desktop, tablet, and mobile devices
-- ♿ **Accessibility**: Built with accessibility best practices
-- 🔄 **Real-time Updates**: Live product availability and transaction status
-- 🎨 **Retro Aesthetic**: Dark theme with green/yellow displays mimicking classic vending machines
+### Core Functionality
+- **Money Management**: Support for MAD 0.5, 1, 2, 5, and 10 denominations
+- **Product Selection**: Interactive grid displaying available products with real-time stock information
+- **Transaction Processing**: Complete transaction lifecycle from money insertion to product dispensing
+- **Balance Tracking**: Real-time remaining balance calculation after product selections
+- **Receipt Generation**: Digital receipts with transaction details and change information
 
-## Tech Stack
+### User Experience
+- **Realistic Design**: Authentic vending machine appearance with professional styling
+- **Responsive Layout**: Optimized for various screen sizes and devices
+- **Real-time Updates**: Live synchronization with backend for accurate state management
+- **Error Handling**: Comprehensive error messages and user guidance
+- **Accessibility**: Clear visual feedback and intuitive navigation
 
-- **Framework**: Next.js 15 with App Router
+### Technical Features
+- **Backend Integration**: RESTful API communication for all operations
+- **State Management**: Robust state handling for complex transaction flows
+- **Type Safety**: Full TypeScript implementation for enhanced reliability
+- **Performance**: Optimized rendering and efficient data fetching
+
+## Technology Stack
+
+- **Framework**: Next.js 15.3.3
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS v4
-- **State Management**: React Hooks (useState, useEffect)
-- **API Integration**: Fetch API with custom error handling
-- **Development**: ESLint, Hot Reload
+- **Styling**: Tailwind CSS
+- **Package Manager**: npm
 
-## Getting Started
+## Screenshots
 
-### Prerequisites
+### Initial State - No Money Inserted
+![No Money Inserted](screenshots/no_money_inserted.png)
 
-- Node.js 18+
-- npm, yarn, pnpm, or bun
-- Backend API running on `http://localhost:8080` (or configure `NEXT_PUBLIC_API_BASE_URL`)
+The initial state of the vending machine when no money has been inserted. Products are visible but disabled, and the system prompts users to insert money to begin.
 
-### Installation
+### Money Inserted - Products Available
+![Products Can Be Bought](screenshots/can_be_bought.png)
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd distributeur-automatique-frontend
-```
+After inserting money, products become interactive based on the remaining balance. Green borders indicate affordable products, while orange borders show products that require additional funds.
 
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
+### Product Selection
+![Product Selection](screenshots/select_product.png)
 
-3. Configure environment variables:
-```bash
-# Copy the example environment file
-cp .env.local.example .env.local
+Selected products are highlighted with yellow borders and checkmarks. The transaction panel shows the current balance, selected items, and total cost.
 
-# Edit .env.local to set your backend API URL
-NEXT_PUBLIC_API_BASE_URL=http://localhost:8080
-```
+### Transaction Receipt
+![Receipt](screenshots/receipt.png) ![Receipt Details](screenshots/receipt2.png)
 
-4. Start the development server:
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Digital receipt displayed after successful transaction completion, showing purchased items, payment details, and change information.
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Backend API
-
-This frontend is designed to work with a vending machine backend API with the following endpoints:
-
-- `GET /api/products` - Get all available products
-- `POST /api/transactions/{transactionId}/products/{productId}` - Select a product
-- `POST /api/transactions/{transactionId}/money` - Insert money
-- `POST /api/transactions/{transactionId}/complete` - Complete transaction
-- `POST /api/transactions/{transactionId}/cancel` - Cancel transaction
 
 ## Usage
 
-### Proper Vending Machine Workflow
-
-1. **Insert Money First**: Use the money slot to insert Moroccan Dirham coins (0.5, 1, 2, 5, 10 MAD)
-2. **Browse Products**: View available products in the display window with slot labels (A1, B2, etc.)
-3. **Select Items**: Click on products to add them to your transaction (only works after inserting money)
-4. **Add More Items**: Continue selecting products or inserting more money as needed
-5. **Complete or Cancel**: Use the COMPLETE button when you have sufficient funds, or CANCEL to get your money back
-6. **Collect Items**: View your receipt and collect your items and change from the dispensing area
-
-### Key Rules
-- **Money must be inserted first** to start a transaction
-- **Multiple products** can be selected in one transaction
-- **Sufficient funds** must be available before completing the purchase
-- **Cancel anytime** to get your money back
-- **Change is automatically calculated** and returned
-
-## Project Structure
-
-```
-├── app/                    # Next.js App Router
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
-├── components/            # React components
-│   ├── VendingMachine.tsx # Main vending machine component
-│   ├── ProductGrid.tsx    # Product display grid
-│   ├── TransactionPanel.tsx # Transaction management
-│   ├── MoneyInput.tsx     # Money insertion interface
-│   └── Receipt.tsx        # Receipt display modal
-├── lib/                   # Utility libraries
-│   └── api.ts            # API service functions
-├── types/                 # TypeScript type definitions
-│   └── api.ts            # API and application types
-└── public/               # Static assets
+### Development
+Start the development server:
+```bash
+npm run dev
 ```
 
-## Development
+The application will be available at `http://localhost:3000`.
 
-### Available Scripts
-
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-
-### Code Quality
-
-- **TypeScript**: Full type safety with strict mode enabled
-- **ESLint**: Code linting with Next.js recommended rules
-- **Tailwind CSS**: Utility-first CSS framework for consistent styling
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub/GitLab/Bitbucket
-2. Connect your repository to [Vercel](https://vercel.com)
-3. Set environment variables in Vercel dashboard
-4. Deploy automatically on every push
-
-### Other Platforms
-
-1. Build the application:
+### Production
+Build and start the production server:
 ```bash
 npm run build
+npm start
 ```
 
-2. Start the production server:
+### Testing
+Run the test suite:
 ```bash
-npm run start
+npm test
 ```
 
-## Contributing
+Run tests with coverage:
+```bash
+npm run test:coverage
+```
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+## API Integration
 
-## License
+The frontend communicates with a backend API for all operations:
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+- **GET /api/products** - Retrieve available products
+- **POST /api/transaction/money** - Insert money
+- **GET /api/transaction/money** - Get inserted money amount
+- **POST /api/products/{id}** - Select a product
+- **GET /api/transaction/products/selected** - Get selected products
+- **GET /api/transaction/products/unselect/{id}** - Unselect a product
+- **POST /api/transaction/complete** - Complete transaction
+- **POST /api/transaction/cancel** - Cancel transaction
+
+## Configuration
+
+### Supported Currencies
+The application supports Moroccan Dirham (MAD) with the following denominations:
+- 0.5 MAD
+- 1 MAD
+- 2 MAD
+- 5 MAD
+- 10 MAD
+
+## Architecture
+
+### Component Structure
+- **VendingMachine**: Main container component managing application state
+- **ProductGrid**: Interactive product display with selection capabilities
+- **TransactionPanel**: Money insertion, balance display, and transaction controls
+- **MoneyInput**: Currency denomination input interface
+- **Receipt**: Transaction completion and receipt display
+
+### State Management
+The application uses React's built-in state management with a centralized state structure:
+- Product inventory and availability
+- Transaction state and selected items
+- Money insertion and balance tracking
+- Loading states and error handling
