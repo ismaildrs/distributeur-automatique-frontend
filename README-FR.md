@@ -1,69 +1,68 @@
-# Vending Machine Frontend
+# Distributeur Automatique - Frontend
 
-Une application frontend moderne et responsive pour un système de machine distributrice numérique, développée avec **Next.js** et **TypeScript**. Cette interface propose une expérience utilisateur intuitive simulant l'utilisation d'une véritable machine distributrice.
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge\&logo=next.js\&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge\&logo=typescript\&logoColor=white)
 
-## Vue d'ensemble
+Application frontend pour un système de distributeur automatique développée avec Next.js et TypeScript. Cette application offre une expérience utilisateur intuitive et interactive simulant l’utilisation d’un vrai distributeur automatique.
 
-Cette application frontend sert d’interface utilisateur pour un système de machine distributrice, permettant aux clients de :
+## Présentation
 
-* Insérer de l'argent avec différentes coupures de dirham marocain
-* Parcourir et sélectionner des produits via une grille interactive
-* Visualiser le solde et les informations de transaction en temps réel
-* Finaliser leurs achats et recevoir un reçu numérique
-* Annuler une transaction et obtenir un remboursement
+Cette interface frontend sert d’interface client pour le système de distributeur automatique, permettant aux utilisateurs de :
+
+* Insérer de l’argent en Dirhams marocains (MAD)
+* Parcourir et sélectionner des produits via une grille dynamique
+* Suivre en temps réel le solde et les détails de la transaction
+* Finaliser les achats et recevoir des reçus numériques
+* Annuler les transactions et récupérer l’argent inséré
 
 ## Fonctionnalités
 
-### Fonctionnalités Principales
+### Fonctionnalités principales
 
-* **Gestion de l’argent** : Prise en charge des coupures de 0,5, 1, 2, 5 et 10 dirhams
-* **Sélection de produits** : Grille interactive affichant les produits disponibles avec l’état du stock en temps réel
-* **Traitement des transactions** : Cycle complet de la transaction depuis l’insertion d’argent jusqu’à la distribution du produit
-* **Suivi du solde** : Calcul en temps réel du solde restant après la sélection de produits
-* **Génération de reçus** : Reçus numériques avec détails des transactions et de la monnaie rendue
+* **Gestion de l’argent :** Prise en charge des coupures MAD 0,5, 1, 2, 5 et 10
+* **Sélection de produits :** Grille interactive avec affichage du stock en temps réel
+* **Traitement des transactions :** Cycle complet de la transaction, de l’insertion d’argent à la délivrance du produit
+* **Suivi du solde :** Calcul dynamique du solde restant après sélection des produits
+* **Génération de reçus :** Reçus numériques résumant les achats et la monnaie rendue
 
-### Expérience Utilisateur
+### Expérience utilisateur
 
-* **Design réaliste** : Apparence authentique de machine distributrice avec un style professionnel
+* **Design authentique :** Apparence réaliste de distributeur automatique pour une interaction immersive
 
-### Aspects Techniques
+### Aspects techniques
 
-* **Intégration Backend** : Communication via API REST pour toutes les opérations
-* **Gestion d’état** : Gestion robuste des états pour des flux de transaction complexes
-* **Sécurité typée** : Implémentation complète en TypeScript pour plus de fiabilité
+* **Intégration backend :** Communication via API REST pour toutes les opérations
+* **Gestion d’état :** Gestion robuste des flux complexes de transaction avec React
+* **Sécurité de typage :** Développement intégral en TypeScript pour plus de fiabilité et de maintenabilité
 
-## Pile Technologique
+## Technologie utilisée
 
-* **Framework** : Next.js 15.3.3
-* **Langage** : TypeScript
-* **Stylisation** : Tailwind CSS
-* **Gestionnaire de paquets** : npm
+* **Framework :** Next.js 15.3.3
+* **Langage :** TypeScript
+* **Style :** Tailwind CSS
+* **Gestionnaire de paquets :** npm
 
-## Captures d'écran
+## Captures d’écran
 
-### État Initial – Aucun Argent Inséré
+### État initial — Aucun argent inséré
 
 ![No Money Inserted](screenshots/no_money_inserted.png)
+Les produits sont visibles mais désactivés, incitant l’utilisateur à insérer de l’argent pour commencer.
 
-État initial de la machine lorsque aucun argent n’a été inséré. Les produits sont visibles mais désactivés, et le système invite l’utilisateur à insérer de l’argent pour commencer.
-
-### Argent Inséré – Produits Disponibles
+### Argent inséré — Produits disponibles
 
 ![Products Can Be Bought](screenshots/can_be_bought.png)
+Les produits deviennent interactifs selon l’argent inséré. Les bordures vertes indiquent les produits abordables, les bordures orange ceux nécessitant plus de fonds.
 
-Après insertion d'argent, les produits deviennent interactifs selon le solde restant. Les bordures vertes indiquent les produits abordables, tandis que les bordures orange signalent ceux nécessitant des fonds supplémentaires.
-
-### Sélection de Produit
+### Sélection de produits
 
 ![Product Selection](screenshots/select_product.png)
+Les produits sélectionnés sont mis en évidence par des bordures jaunes et des coches. Le panneau de transaction affiche le solde actuel, les articles sélectionnés et le coût total.
 
-Les produits sélectionnés sont surlignés avec une bordure jaune et une coche. Le panneau de transaction affiche le solde actuel, les articles sélectionnés et le coût total.
-
-### Reçu de Transaction
+### Reçu de transaction
 
 ![Receipt](screenshots/receipt.png) ![Receipt Details](screenshots/receipt2.png)
-
-Reçu numérique affiché après la finalisation de la transaction, indiquant les articles achetés, les détails du paiement et la monnaie rendue.
+Reçu numérique affiché après une transaction réussie, détaillant les articles achetés, le paiement et la monnaie rendue.
 
 ## Utilisation
 
@@ -75,49 +74,40 @@ Lancer le serveur de développement :
 npm run dev
 ```
 
-L’application sera disponible à l’adresse `http://localhost:3000`.
-
-### Production
-
-Construire et démarrer le serveur de production :
-
-```bash
-npm run build
-npm start
-```
+L’application sera accessible sur `http://localhost:3000`.
 
 ### Tests
 
-Exécuter la suite de tests :
+Lancer les tests :
 
 ```bash
 npm test
 ```
 
-Exécuter les tests avec couverture :
+Lancer les tests avec rapport de couverture :
 
 ```bash
 npm run test:coverage
 ```
 
-## Intégration de l'API
+## Intégration API
 
-Le frontend communique avec une API backend pour toutes les opérations :
+Le frontend communique avec l’API backend pour toutes les opérations :
 
-* **GET /api/products** - Récupérer les produits disponibles
-* **POST /api/transaction/money** - Insérer de l’argent
-* **GET /api/transaction/money** - Obtenir le montant inséré
-* **POST /api/products/{id}** - Sélectionner un produit
-* **GET /api/transaction/products/selected** - Obtenir les produits sélectionnés
-* **GET /api/transaction/products/unselect/{id}** - Désélectionner un produit
-* **POST /api/transaction/complete** - Finaliser la transaction
-* **POST /api/transaction/cancel** - Annuler la transaction
+* `GET /api/products` — Récupérer la liste des produits disponibles
+* `POST /api/transaction/money` — Insérer de l’argent
+* `GET /api/transaction/money` — Obtenir le total d’argent inséré
+* `POST /api/transaction/products/select/{id}` — Sélectionner un produit
+* `GET /api/transaction/products/selected` — Obtenir les produits sélectionnés
+* `POST /api/transaction/products/unselect/{id}` — Désélectionner un produit
+* `POST /api/transaction/complete` — Finaliser la transaction
+* `POST /api/transaction/cancel` — Annuler la transaction
 
 ## Configuration
 
-### Devises prises en charge
+### Devises supportées
 
-L’application prend en charge le dirham marocain (MAD) avec les coupures suivantes :
+Prise en charge des coupures en Dirhams marocains (MAD) :
 
 * 0,5 MAD
 * 1 MAD
@@ -127,19 +117,19 @@ L’application prend en charge le dirham marocain (MAD) avec les coupures suiva
 
 ## Architecture
 
-### Structure des Composants
+### Vue d’ensemble des composants
 
-* **VendingMachine** : Composant conteneur principal gérant l’état global de l’application
-* **ProductGrid** : Grille interactive des produits avec capacités de sélection
-* **TransactionPanel** : Insertion d’argent, affichage du solde et contrôles de transaction
-* **MoneyInput** : Interface pour saisir les coupures de monnaie
-* **Receipt** : Affichage du reçu après finalisation d’une transaction
+* **VendingMachine :** Conteneur principal gérant l’état global et la logique
+* **ProductGrid :** Affiche les produits et gère la sélection/désélection
+* **TransactionPanel :** Gère l’insertion d’argent, l’affichage du solde et les contrôles de transaction (confirmation, annulation)
+* **MoneyInput :** Interface d’insertion des coupures
+* **Receipt :** Affiche le résumé détaillé de la transaction après finalisation
 
-### Gestion de l’état
+### Gestion d’état
 
-L’application utilise la gestion d’état intégrée de React avec une structure centralisée :
+L’application utilise la gestion d’état native de React pour maintenir :
 
-* Inventaire des produits et disponibilité
-* État de la transaction et articles sélectionnés
-* Insertion d’argent et suivi du solde
-* États de chargement et gestion des erreurs
+* L’inventaire et la disponibilité des produits
+* L’état actuel de la transaction, y compris les produits sélectionnés
+* L’argent inséré et le calcul du solde restant
+* Les états de chargement et de gestion des erreurs
